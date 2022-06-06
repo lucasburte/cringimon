@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private BoxCollider2D boxCollider;
+
+    private Vector3 moveDelta;
+
+    private void Start()
     {
-        
+        boxCollider = GetComponent<boxCollider2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-        
+        // Remettre à zero le move delta
+        moveDelta = Vector3.zero;
+
+        float x = Input.GetAxisRaw("Horizontal");
+        float y = Input.GetAxisRaw("Vertical");
+
+        Debug.Log(x);
+        Debug.Log(y);
     }
 }
