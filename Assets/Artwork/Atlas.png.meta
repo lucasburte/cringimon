@@ -208,7 +208,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -216,6 +216,27 @@ TextureImporter:
       bones: []
       spriteID: d3edfb8ce367b8641906b41f76fbc8d3
       internalID: 1944764165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_wall
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 212
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1744dec7a17a9c47a4a5002dcd136f5
+      internalID: -970082562
       vertices: []
       indices: 
       edges: []
@@ -233,6 +254,7 @@ TextureImporter:
     nameFileIdTable:
       player_1: 1308428118
       wall_0: 1781296224
+      test_wall: -970082562
       player_0: -81105039
       ground_0: 1087590534
       floor_0: 1944764165
