@@ -9,6 +9,13 @@ public class PlayerController : MonoBehaviour
     public bool isMoving;
     private Vector2 input;
 
+    private Animator animator;
+
+    void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +34,9 @@ public class PlayerController : MonoBehaviour
 
             if (input != Vector2.zero)
             {
+                animator.SetFloat("moveX", input.x);
+                animator.SetFloat("moveY", input.y);
+
                 var targetPos = transform.position;
                 targetPos.x += input.x;
                 targetPos.y += input.y;
@@ -34,6 +44,8 @@ public class PlayerController : MonoBehaviour
                 StartCoroutine(Move(targetPos));
             }
         }
+
+        animator.SetBool("isMoving", isMoving);
     }
 
     // Mouvement fluide d'une case à un autre
