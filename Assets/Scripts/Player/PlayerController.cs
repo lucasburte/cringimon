@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
 
     public float moveSpeed;
+    public LayerMask solidObjectsLayer;
     public bool isMoving;
     private Vector2 input;
 
@@ -40,8 +41,12 @@ public class PlayerController : MonoBehaviour
                 var targetPos = transform.position;
                 targetPos.x += input.x;
                 targetPos.y += input.y;
-
-                StartCoroutine(Move(targetPos));
+                
+                // if the next tile is walkable, we can move on the target position
+                if(IsWalkable(targetPos)){
+                    StartCoroutine(Move(targetPos));
+                }
+                
             }
         }
 
@@ -61,5 +66,13 @@ public class PlayerController : MonoBehaviour
         transform.position = targetPos;
 
         isMoving = false;
+    }
+
+    // check if there is a solid object on the target position
+    private bool IsWalkable(Vector3 targetPos){
+        if(Physics2D.OverlapCircle(targetPos,0.2f,solidObjectsLayer) != null){
+            return false;
+        }
+        return true;
     }
 }
