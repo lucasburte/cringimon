@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
 
     public float moveSpeed;
     public LayerMask solidObjectsLayer;
+    public LayerMask grassLayer;
+
     public bool isMoving;
     private Vector2 input;
 
@@ -66,6 +68,9 @@ public class PlayerController : MonoBehaviour
         transform.position = targetPos;
 
         isMoving = false;
+
+        //
+        CheckForEncounters();
     }
 
     // check if there is a solid object on the target position
@@ -74,5 +79,15 @@ public class PlayerController : MonoBehaviour
             return false;
         }
         return true;
+    }
+
+    // check if the target tile is a longGrass tile
+    private void CheckForEncounters(){
+        if(Physics2D.OverlapCircle(transform.position,0.2f,grassLayer) != null){
+            // if he walked on a longGrass tile, there is 10% chance to trigger a battle
+            if(Random.Range(1,101) <= 10){
+                Debug.Log("Pokemon sauvage rencontré !");
+            }
+        }
     }
 }
