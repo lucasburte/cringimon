@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0a3b3100925eb0a4e8528400d22377df, type: 3}
-  m_Name: Cavax
+  m_Name: Golemax
   m_EditorClassIdentifier: 
-  name: Cavax
+  name: Golemax
   description: 
-  frontSprite: {fileID: 21300000, guid: 789b13d3c7efb8c429a47afd00d1955d, type: 3}
-  backSprite: {fileID: 21300000, guid: 21d27ed73eda128408a0710314dce63e, type: 3}
+  frontSprite: {fileID: 0}
+  backSprite: {fileID: 0}
   type1: 16
   type2: 8
-  maxHP: 45
-  attaque: 49
-  defense: 49
-  attaqueSpe: 65
-  defenseSpe: 65
-  vitesse: 45
+  maxHP: 60
+  attaque: 62
+  defense: 63
+  attaqueSpe: 80
+  defenseSpe: 80
+  vitesse: 60
